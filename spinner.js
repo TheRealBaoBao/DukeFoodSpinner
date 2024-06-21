@@ -19,24 +19,76 @@ var btn = document.getElementById("btn");
 var span = document.getElementsByClassName("close")[0];
 
 
+const items = document.querySelectorAll('.item');
+const spinButton = document.querySelector('button');
+
 //master function
 function pickRestaruant(){
-    const randomRestaraunt = getRandomRestaruant();
-    modal.style.display = "block"; // When the user clicks on the button, open the modal
+    // Generate a random number between 1 and 8 (inclusive)
+    const randomNumber = Math.floor(Math.random() * 8) + 1;
 
-    document.getElementById('pText1').innerHTML = randomRestaraunt.restaruant;
-    document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
-    document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
+    // Calculate the index of the selected item (adjust for 0-based index)
+    const selectedIndex = randomNumber - 1;
 
+    animateSelection(selectedIndex);
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-    }
-   
 }
+
+function animateSelection(selectedIndex) {
+    const totalFrames = 60; // Total frames for the animation
+    let frame = 0;
+
+    // Interval for the animation
+    const interval = setInterval(() => {
+        // Reset all items to default style
+        items.forEach(item => item.classList.remove('active'));
+
+        // Calculate the current frame's item index
+        const currentItemIndex = frame % items.length;
+        
+        // Highlight the current frame's item
+        items[currentItemIndex].classList.add('active');
+
+        frame++;
+
+        // Stop the animation after total frames
+        if (frame === totalFrames) {
+            clearInterval(interval);
+
+            // Display result after animation ends
+            displayResult(selectedIndex);
+
+            const randomRestaraunt = getRandomRestaruant();
+            modal.style.display = "block"; // When the user clicks on the button, open the modal
+
+            document.getElementById('pText1').innerHTML = randomRestaraunt.restaruant;
+            document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
+            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }   
+            }
+        }
+    }, 50); // Adjust interval duration for speed of animation
+}
+
+function displayResult(selectedIndex) {
+    // Reset all items to default style
+    items.forEach(item => item.classList.remove('active'));
+
+    // Highlight the selected item
+    items[selectedIndex].classList.add('active');
+
+    // Enable button after displaying result
+    spinButton.disabled = false;
+    spinComplete = true;
+}
+
+// Event listener for the Spin button
+spinButton.addEventListener('click', spin);
