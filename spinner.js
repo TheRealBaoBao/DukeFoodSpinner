@@ -86,13 +86,13 @@ btn2.addEventListener('click', function() {
     btn2.classList.add('clicked');
     // Update background image of items container
     item1.style.backgroundImage = 'url("https://img.restaurantguru.com/re4e-dishes-Ginger-Soy.jpg")';
-    item2.style.backgroundImage = 'url("")';
-    item3.style.backgroundImage = 'url("")';
-    item4.style.backgroundImage = 'url("")';
-    item5.style.backgroundImage = 'url("")';
-    item6.style.backgroundImage = 'url("")';
-    item7.style.backgroundImage = 'url("")';
-    item8.style.backgroundImage = 'url("")';
+    item2.style.backgroundImage = 'url("https://media.post.rvohealth.io/wp-content/uploads/2021/09/sushi-sashimi-732x549-thumbnail-732x549.jpg")';
+    item3.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/800px-Pizza-3007395.jpg")';
+    item4.style.backgroundImage = 'url("https://twokooksinthekitchen.com/wp-content/uploads/2022/09/honey-roasted-parsnips-10.jpg")';
+    item5.style.backgroundImage = 'url("https://cdn.vox-cdn.com/thumbor/fWdJKI_dirNSL2bBWVVWVW_I4-Q=/0x0:7360x4912/1200x800/filters:focal(3092x1868:4268x3044)/cdn.vox-cdn.com/uploads/chorus_image/image/67000785/shutterstock_1435374326.0.jpg")';
+    item6.style.backgroundImage = 'url("https://uniquedestination.mitsishotels.com/wp-content/uploads/2018/03/shutterstock_467823860-1024x463.jpg")';
+    item7.style.backgroundImage = 'url("https://media.istockphoto.com/id/913677844/photo/tamale-with-corn-leaf-and-filled-chili-pepper.jpg?s=612x612&w=0&k=20&c=JnHdwelbFuSkX1DAKpWhHhE5BplP9rnBHXJOETJpuOk=")';
+    item8.style.backgroundImage = 'url("https://fesmag.com/images/stories/2022-07/onsite_IMG_2511-duke-induction.jpg")';
 
     for (let i = 0; i < westCampus.length; i++) {
         const restaurantName = westCampus[i].restaruant;
@@ -109,13 +109,13 @@ btn3.addEventListener('click', function() {
     btn3.classList.add('clicked');
     // Update background image of items container
     item1.style.backgroundImage = 'url("https://lh3.googleusercontent.com/p/AF1QipNEbVs638mvnJpKw_fjgjEbXVtiJ0wnm_XaX9o6=s1600-w240-h240")';
-    item2.style.backgroundImage = 'url("")';
-    item3.style.backgroundImage = 'url("")';
-    item4.style.backgroundImage = 'url("")';
-    item5.style.backgroundImage = 'url("")';
-    item6.style.backgroundImage = 'url("")';
-    item7.style.backgroundImage = 'url("")';
-    item8.style.backgroundImage = 'url("")';
+    item2.style.backgroundImage = 'url("https://s3-media0.fl.yelpcdn.com/bphoto/qJ4DCEipJeAq5yIbnSeDZA/348s.jpg")';
+    item3.style.backgroundImage = 'url("https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=600,format=auto,quality=50/https://doordash-static.s3.amazonaws.com/media/photos/b4879a30-f87c-45c8-b4c1-4395444cae0d-retina-large.jpg")';
+    item4.style.backgroundImage = 'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/08/06/sliced-steak-on-cutting-board.jpg.rend.hgtvcom.1280.720.suffix/1628249872290.jpeg")';
+    item5.style.backgroundImage = 'url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/crm/fortworth/jimmy-john-s2_a0886bc3-5056-a348-3aebcc75cbabe69b.jpg")';
+    item6.style.backgroundImage = 'url("https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,h_396,q_75,w_704/https://assets.dam.simpleviewinc.com/asset/62c5ea3174266d02e93ba856")';
+    item7.style.backgroundImage = 'url("https://images.happycow.net/venues/1024/90/59/hcmp9059_961979.jpeg")';
+    item8.style.backgroundImage = 'url("https://d2sygdwsqncsjz.cloudfront.net/613195-4.jpeg")';
 
     for (let i = 0; i < ninth.length; i++) {
         const restaurantName = ninth[i].restaruant;
@@ -133,10 +133,18 @@ function pickRestaurant(){
     // Calculate the index of the selected item (adjust for 0-based index)
     const selectedIndex = randomNumber - 1;
 
+    // Play the audio
+    const munchAudio = document.getElementById('munchAudio');
+    munchAudio.play();
+    munchAudio.volume = 1.0;
+    munchAudio.playbackRate = 4.5;
+
     animateSelection(selectedIndex);
 
 }
 function animateSelection(selectedIndex) {
+
+
     const totalFrames = 40; // Total frames for the animation
     let frame = 0;
 
@@ -199,12 +207,6 @@ function displayResult(selectedIndex) {
 
     // Highlight the selected item
     items[selectedIndex].classList.add('active');
-
-     // Play the audio
-    const munchAudio = document.getElementById('munchAudio');
-    munchAudio.play();
-    munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
 
     // Enable button after displaying result
     buttons.forEach(button => {
