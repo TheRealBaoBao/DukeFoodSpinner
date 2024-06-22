@@ -176,9 +176,9 @@ function animateSelection(selectedIndex) {
 
             modal.style.display = "block"; // When the user clicks on the button, open the modal
 
-            document.getElementById('pText1').innerHTML = randomRestaurant.restaurant;
-            document.getElementById('pText2').innerHTML = "Location: " + randomRestaurant.location;
-            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaurant.priceRange;
+            document.getElementById('pText1').innerHTML = randomRestaraunt.restaruant;
+            document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
+            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
 
             span.onclick = function() {
                 modal.style.display = "none";
