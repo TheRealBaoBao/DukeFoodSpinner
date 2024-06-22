@@ -4,21 +4,13 @@
 }
 
 body {
-    --dot-bg: #f2f6fb;
-    --dot-color: black;
-    --dot-size: 1px;
-    --dot-space: 22px;
-	background:
-		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-		var(--dot-color);
+    background-color: lightblue;
     font-family: myFont;
 }
 
 h1{
     margin-top: 15px;
 }
-
 
 .container {
     text-align: center;
@@ -31,7 +23,6 @@ h1{
     max-width: 80%;
     margin: 0 auto;
     padding: 20px; /* Add padding around the container */
-    padding-bottom: 10px;
 }
    
 .item {
@@ -48,11 +39,6 @@ h1{
     border-radius: 5%;
     transition: background-color 0.3s ease-in-out;
     box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-    background-size: auto; /* Cover makes sure the image covers the entire background */
-    background-position: center; /* Center the image within the div */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    position: relative; /* Ensure positioning context */
-    overflow: hidden; /* Hide any overflow if necessary */
 }
 
 @media (max-width: 1200px) {
@@ -68,9 +54,6 @@ h1{
         height: 120px; 
     }
 
-    p{
-        font-size: 15px;
-    }
 
     .item:nth-child(4n+1) {
         margin-right: 0; /* Remove margin on the first item in each row in column layout */
@@ -84,47 +67,14 @@ h1{
     h1{
         margin-top: 75px;
     }
-    p{
-        font-size: 10px;
-    }
 }
 
-.item-1{
-    background-image: url("https://today.duke.edu/sites/default/files/legacy-files/legacy_files/pizza_590.jpg");
-}
-
-.item-2{
-    background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/5e/1c/e4/piccola-cucina-osteria.jpg?w=400&h=300&s=1");
-}
-
-.item-3{
-    background-image: url("https://cdn.loveandlemons.com/wp-content/uploads/2021/04/green-salad-500x375.jpg");
-}
-
-.item-4{
-    background-image: url("https://hips.hearstapps.com/hmg-prod/images/chicken-stir-fry-index-65130392700bf.jpg?crop=0.502xw:1.00xh;0.170xw,0&resize=1200:*");
-}
-
-.item-5{
-    background-image: url("https://images.ctfassets.net/3vz37y2qhojh/1iLDJFZEjg02OFuHZOP2Ga/c779f1850ef60dfd55f4b35c271923cf/Healthy-Southern-style-Cast-Iron-Chicken-Dinner-1.35-1.jpg?w=750&fit=fill&fm=webp");
-}
-
-.item-6{
-    background-image: url("https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/06/08/0/FNM_070120-Grilled-Hot-Dogs_s4x3.jpg.rend.hgtvcom.616.462.suffix/1591625198177.jpeg");
-}
-
-.item-7{
-    background-image: url("https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_150,q_auto:low,fl_lossy,dpr_2.0,c_fill,f_auto,h_130/iljrk5am4jk7mcd0rwtr");
-}
-
-.item-8{
-    background-image: url("https://sweetieshoppie.co.uk/cdn/shop/files/flying-saucers-or-sherbet-discs-or-kids-party-sweets-or-the-sweetie-shoppie-1_512x512.jpg?v=1718557704");
-}
 
 .item.active {
     background-color: white; 
-    color: #fff07f;
-    transform: scale(1.15);
+    color: #3498db;
+    border-color: #3498db; 
+    transform: scale(1.1);
     animation: flash 0.5s ease-out; 
 }
 
@@ -137,14 +87,15 @@ h1{
     }
 }
 
-#btn{
+
+button{
     font-family: myFont;
     display: block;
-    margin: 0px auto;
+    margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #12486b;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -152,34 +103,12 @@ h1{
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.locationBtn {
-    font-family: myFont;
-    margin-bottom: 5px;
-    padding: 10px 20px;
-    cursor: pointer; 
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+button:hover {
+    background-color: #0056b3;
 }
 
-#btn:hover {
-    background-color: #0D3B65;
-}
-
-#btn:active {
+button:active {
     transform: scale(0.5);
-}
-
-
-.locationBtn:active {
-    transform: scale(0.75);
-}
-
-
-.locationBtn.clicked {
-    color: #fff;
-    background-color: #0D3B65;
-    font-size: 17px;
 }
 
 .modal {
@@ -217,3 +146,8 @@ h1{
     cursor: pointer;
   }
 
+
+
+
+
+  

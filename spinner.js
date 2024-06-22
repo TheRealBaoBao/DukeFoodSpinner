@@ -126,7 +126,7 @@ btn3.addEventListener('click', function() {
 });
 
 //master function
-function pickRestaruant(){
+function pickRestaurant(){
     // Generate a random number between 1 and 8 (inclusive)
     const randomNumber = Math.floor(Math.random() * 8) + 1;
 
@@ -176,9 +176,9 @@ function animateSelection(selectedIndex) {
 
             modal.style.display = "block"; // When the user clicks on the button, open the modal
 
-            document.getElementById('pText1').innerHTML = randomRestaraunt.restaruant;
-            document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
-            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
+            document.getElementById('pText1').innerHTML = randomRestaurant.restaurant;
+            document.getElementById('pText2').innerHTML = "Location: " + randomRestaurant.location;
+            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaurant.priceRange;
 
             span.onclick = function() {
                 modal.style.display = "none";
@@ -199,6 +199,12 @@ function displayResult(selectedIndex) {
 
     // Highlight the selected item
     items[selectedIndex].classList.add('active');
+
+     // Play the audio
+    const munchAudio = document.getElementById('munchAudio');
+    munchAudio.play();
+    munchAudio.volume = 1.0;
+    munchAudio.playbackRate = 4.5;
 
     // Enable button after displaying result
     buttons.forEach(button => {
