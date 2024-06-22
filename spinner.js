@@ -89,7 +89,7 @@ function displayResult(selectedIndex) {
     const munchAudio = document.getElementById('munchAudio');
     munchAudio.play();
     munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
+    munchAudio.playbackRate = 1.5;
 
     // Enable button after displaying result
     spinButton.disabled = false;
