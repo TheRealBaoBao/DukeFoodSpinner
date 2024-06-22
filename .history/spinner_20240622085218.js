@@ -86,10 +86,8 @@ function displayResult(selectedIndex) {
     items[selectedIndex].classList.add('active');
 
      // Play the audio
-    const munchAudio = document.getElementById('munchAudio');
-    munchAudio.play();
-    munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
+        const munchAudio = document.getElementById('munchAudio');
+        munchAudio.play();
 
     // Enable button after displaying result
     spinButton.disabled = false;
@@ -98,6 +96,3 @@ function displayResult(selectedIndex) {
 
 // Event listener for the Spin button
 spinButton.addEventListener('click', spin);
-
-
-

@@ -38,6 +38,9 @@ function animateSelection(selectedIndex) {
     const totalFrames = 60; // Total frames for the animation
     let frame = 0;
 
+        // Audio element for click sound
+        const clickAudio = document.getElementById('clickAudio');
+
     // Interval for the animation
     const interval = setInterval(() => {
         // Reset all items to default style
@@ -49,6 +52,9 @@ function animateSelection(selectedIndex) {
         // Highlight the current frame's item
         items[currentItemIndex].classList.add('active');
 
+        // Play the click sound
+                clickAudio.currentTime = 0; // Reset audio to start
+                clickAudio.play();
         frame++;
 
         // Stop the animation after total frames
@@ -89,7 +95,7 @@ function displayResult(selectedIndex) {
     const munchAudio = document.getElementById('munchAudio');
     munchAudio.play();
     munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
+    munchAudio.playbackRate = 1.0;
 
     // Enable button after displaying result
     spinButton.disabled = false;
@@ -98,6 +104,3 @@ function displayResult(selectedIndex) {
 
 // Event listener for the Spin button
 spinButton.addEventListener('click', spin);
-
-
-

@@ -9,7 +9,7 @@ const location1 = [
 
 //function to pull a random restaurant from above section
 //this function needs a parameter to pass in according to which location the user is on
-function getRandomRestaurant(){
+function getRandomrestaurant(){
     return location1[Math.floor(Math.random() * location1.length)];
 }
 
@@ -23,7 +23,7 @@ const items = document.querySelectorAll('.item');
 const spinButton = document.querySelector('button');
 
 //master function
-function pickRestaurant(){
+function pickrestaurant(){
     // Generate a random number between 1 and 8 (inclusive)
     const randomNumber = Math.floor(Math.random() * 8) + 1;
 
@@ -58,7 +58,7 @@ function animateSelection(selectedIndex) {
             // Display result after animation ends
             displayResult(selectedIndex);
 
-            const randomRestaurant = getRandomRestaurant();
+            const randomRestaurant = getRandomrestaurant();
             modal.style.display = "block"; // When the user clicks on the button, open the modal
 
             document.getElementById('pText1').innerHTML = randomRestaurant.restaurant;
@@ -85,12 +85,6 @@ function displayResult(selectedIndex) {
     // Highlight the selected item
     items[selectedIndex].classList.add('active');
 
-     // Play the audio
-    const munchAudio = document.getElementById('munchAudio');
-    munchAudio.play();
-    munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
-
     // Enable button after displaying result
     spinButton.disabled = false;
     spinComplete = true;
@@ -98,6 +92,3 @@ function displayResult(selectedIndex) {
 
 // Event listener for the Spin button
 spinButton.addEventListener('click', spin);
-
-
-

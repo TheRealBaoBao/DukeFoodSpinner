@@ -2,14 +2,14 @@
 
 //mock location
 const location1 = [
-    {restaurant: 'McDonalds', location: '1st floor', priceRange: '$'}, 
-    {restaurant: 'Gyotaku', location: '2nd floor', priceRange: '$$'}, 
-    {restaurant: 'Burger King', location: '3rd floor', priceRange: '$$$'}, 
+    {restaruant: 'McDonalds', location: '1st floor', priceRange: '$'}, 
+    {restaruant: 'Gyotaku', location: '2nd floor', priceRange: '$$'}, 
+    {restaruant: 'Burger King', location: '3rd floor', priceRange: '$$$'}, 
 ]; 
 
-//function to pull a random restaurant from above section
+//function to pull a random restaruant from above section
 //this function needs a parameter to pass in according to which location the user is on
-function getRandomRestaurant(){
+function getRandomRestaruant(){
     return location1[Math.floor(Math.random() * location1.length)];
 }
 
@@ -23,7 +23,7 @@ const items = document.querySelectorAll('.item');
 const spinButton = document.querySelector('button');
 
 //master function
-function pickRestaurant(){
+function pickRestaruant(){
     // Generate a random number between 1 and 8 (inclusive)
     const randomNumber = Math.floor(Math.random() * 8) + 1;
 
@@ -58,12 +58,12 @@ function animateSelection(selectedIndex) {
             // Display result after animation ends
             displayResult(selectedIndex);
 
-            const randomRestaurant = getRandomRestaurant();
+            const randomRestaraunt = getRandomRestaruant();
             modal.style.display = "block"; // When the user clicks on the button, open the modal
 
-            document.getElementById('pText1').innerHTML = randomRestaurant.restaurant;
-            document.getElementById('pText2').innerHTML = "Location: " + randomRestaurant.location;
-            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaurant.priceRange;
+            document.getElementById('pText1').innerHTML = randomRestaraunt.restaruant;
+            document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
+            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
 
             span.onclick = function() {
                 modal.style.display = "none";
@@ -85,12 +85,6 @@ function displayResult(selectedIndex) {
     // Highlight the selected item
     items[selectedIndex].classList.add('active');
 
-     // Play the audio
-    const munchAudio = document.getElementById('munchAudio');
-    munchAudio.play();
-    munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
-
     // Enable button after displaying result
     spinButton.disabled = false;
     spinComplete = true;
@@ -98,6 +92,3 @@ function displayResult(selectedIndex) {
 
 // Event listener for the Spin button
 spinButton.addEventListener('click', spin);
-
-
-
