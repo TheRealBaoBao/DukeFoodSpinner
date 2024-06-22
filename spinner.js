@@ -2,37 +2,37 @@
 
 //mock location
 const marketplace = [
-    {restaruant: 'Wood-Fired', location: '1st floor', priceRange: '$'}, 
-    {restaruant: 'Cucina', location: '2nd floor', priceRange: '$$'}, 
-    {restaruant: 'Harvest', location: '3rd floor', priceRange: '$$$'}, 
-    {restaruant: 'Fusion', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: 'Durham Market', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: '1892 Grille', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: 'Leaf & Ladle', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: "Baker's Table", location: '3rd floor', priceRange: '$$$'},
-]; 
+    { restaruant: 'Wood-Fired', location: '1st floor', priceRange: '$', cuisine: 'Italian' },
+    { restaruant: 'Cucina', location: '2nd floor', priceRange: '$$', cuisine: 'Italian' },
+    { restaruant: 'Harvest', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: 'Fusion', location: '3rd floor', priceRange: '$$$', cuisine: 'Fusion' },
+    { restaruant: 'Durham Market', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: '1892 Grille', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: 'Leaf & Ladle', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: "Baker's Table", location: '3rd floor', priceRange: '$$$', cuisine: 'Bakery' },
+];
 
 const westCampus = [
-    {restaruant: 'Ginger + Soy', location: '1st floor', priceRange: '$'}, 
-    {restaruant: 'Gyotaku', location: '2nd floor', priceRange: '$$'}, 
-    {restaruant: 'II Forno', location: '3rd floor', priceRange: '$$$'}, 
-    {restaruant: "JB's Roasts & Chops", location: '3rd floor', priceRange: '$$$'},
-    {restaruant: 'Tandoor', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: "The Chef's Kitchen", location: '3rd floor', priceRange: '$$$'},
-    {restaruant: 'Yalla!', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: "Farmstead", location: '3rd floor', priceRange: '$$$'},
-]; 
+    { restaruant: 'Ginger + Soy', location: '1st floor', priceRange: '$', cuisine: 'Japanese' },
+    { restaruant: 'Gyotaku', location: '2nd floor', priceRange: '$$', cuisine: 'Japanese' },
+    { restaruant: 'II Forno', location: '3rd floor', priceRange: '$$$', cuisine: 'Italian' },
+    { restaruant: "JB's Roasts & Chops", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: 'Tandoor', location: '3rd floor', priceRange: '$$$', cuisine: 'Indian' },
+    { restaruant: "The Chef's Kitchen", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: 'Yalla!', location: '3rd floor', priceRange: '$$$', cuisine: 'Middle Eastern' },
+    { restaruant: "Farmstead", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+];
 
 const ninth = [
-    {restaruant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$'}, 
-    {restaruant: 'Juju', location: '2nd floor', priceRange: '$$'}, 
-    {restaruant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$$$'}, 
-    {restaruant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$'},
-    {restaruant: 'Jimmy Johns', location: '3rd floor', priceRange: '$$$'},
-    {restaruant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$$'},
-    {restaruant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$$'},
-    {restaruant: "Vin Rouge", location: '3rd floor', priceRange: '$$$'},
-]; 
+    { restaruant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese' },
+    { restaruant: 'Juju', location: '2nd floor', priceRange: '$$', cuisine: 'Asian Fusion' },
+    { restaruant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse' },
+    { restaruant: 'Jimmy Johns', location: '3rd floor', priceRange: '$$$', cuisine: 'Sandwiches' },
+    { restaruant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaruant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$$', cuisine: 'Vietnamese' },
+    { restaruant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French' },
+];
 
 //displaying for modal
 var modal = document.getElementById("myModal");
@@ -56,7 +56,7 @@ const item8 = document.querySelector('.item-8');
 
 
 // Add click event listeners to each button
-btn1.addEventListener('click', function() {
+btn1.addEventListener('click', function () {
     // Remove 'clicked' class from all buttons
     document.querySelectorAll('.locationBtn').forEach(btn => btn.classList.remove('clicked'));
     // Add 'clicked' class to the clicked button
@@ -73,13 +73,17 @@ btn1.addEventListener('click', function() {
 
     for (let i = 0; i < marketplace.length; i++) {
         const restaurantName = marketplace[i].restaruant;
-        document.querySelector(`.item-${i + 1} .restaruantName`).innerHTML = restaurantName;
-    }   
+        const priceRange = marketplace[i].priceRange;
+        const cuisineType = marketplace[i].cuisine;
+        document.querySelector(`.item-${i + 1} .restaurantName`).innerHTML = restaurantName;
+        document.querySelector(`.item-${i + 1} .priceRange`).innerHTML = `Price Range: ${priceRange}`;
+        document.querySelector(`.item-${i + 1} .cuisine`).innerHTML = `Cuisine Type: ${cuisineType}`;
+    }
 
     items.forEach(item => item.classList.remove('active'));
 });
 
-btn2.addEventListener('click', function() {
+btn2.addEventListener('click', function () {
     // Remove 'clicked' class from all buttons
     document.querySelectorAll('.locationBtn').forEach(btn => btn.classList.remove('clicked'));
     // Add 'clicked' class to the clicked button
@@ -96,13 +100,17 @@ btn2.addEventListener('click', function() {
 
     for (let i = 0; i < westCampus.length; i++) {
         const restaurantName = westCampus[i].restaruant;
-        document.querySelector(`.item-${i + 1} .restaruantName`).innerHTML = restaurantName;
-    }   
+        const priceRange = westCampus[i].priceRange;
+        const cuisineType = westCampus[i].cuisine;
+        document.querySelector(`.item-${i + 1} .restaurantName`).innerHTML = restaurantName;
+        document.querySelector(`.item-${i + 1} .priceRange`).innerHTML = `Price Range: ${priceRange}`;
+        document.querySelector(`.item-${i + 1} .cuisine`).innerHTML = `Cuisine Type: ${cuisineType}`;
+    }
 
     items.forEach(item => item.classList.remove('active'));
 });
 
-btn3.addEventListener('click', function() {
+btn3.addEventListener('click', function () {
     // Remove 'clicked' class from all buttons
     document.querySelectorAll('.locationBtn').forEach(btn => btn.classList.remove('clicked'));
     // Add 'clicked' class to the clicked button
@@ -119,14 +127,18 @@ btn3.addEventListener('click', function() {
 
     for (let i = 0; i < ninth.length; i++) {
         const restaurantName = ninth[i].restaruant;
-        document.querySelector(`.item-${i + 1} .restaruantName`).innerHTML = restaurantName;
-    }   
+        const priceRange = ninth[i].priceRange;
+        const cuisineType = ninth[i].cuisine;
+        document.querySelector(`.item-${i + 1} .restaurantName`).innerHTML = restaurantName;
+        document.querySelector(`.item-${i + 1} .priceRange`).innerHTML = `Price Range: ${priceRange}`;
+        document.querySelector(`.item-${i + 1} .cuisine`).innerHTML = `Cuisine Type: ${cuisineType}`;
+    }
 
     items.forEach(item => item.classList.remove('active'));
 });
 
 //master function
-function pickRestaurant(){
+function pickRestaurant() {
     // Generate a random number between 1 and 8 (inclusive)
     const randomNumber = Math.floor(Math.random() * 8) + 1;
 
@@ -155,7 +167,7 @@ function animateSelection(selectedIndex) {
 
         // Calculate the current frame's item index
         const currentItemIndex = frame % items.length;
-        
+
         // Highlight the current frame's item
         items[currentItemIndex].classList.add('active');
 
@@ -174,11 +186,11 @@ function animateSelection(selectedIndex) {
 
             let randomRestaraunt;
             //checks which location we are using
-            if(btn1.classList.contains('clicked')){
+            if (btn1.classList.contains('clicked')) {
                 randomRestaraunt = marketplace[selectedIndex];
-            } else if(btn2.classList.contains('clicked')){
+            } else if (btn2.classList.contains('clicked')) {
                 randomRestaraunt = westCampus[selectedIndex];
-            } else if(btn3.classList.contains('clicked')){
+            } else if (btn3.classList.contains('clicked')) {
                 randomRestaraunt = ninth[selectedIndex];
             }
 
@@ -188,14 +200,14 @@ function animateSelection(selectedIndex) {
             document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
             document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
 
-            span.onclick = function() {
+            span.onclick = function () {
                 modal.style.display = "none";
             }
 
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                }   
+                }
             }
         }
     }, 60); // Adjust interval duration for speed of animation
@@ -216,7 +228,7 @@ function displayResult(selectedIndex) {
 
     // Enable button after displaying result
     buttons.forEach(button => {
-            button.disabled = false;
+        button.disabled = false;
     });
 
     spinComplete = true;
