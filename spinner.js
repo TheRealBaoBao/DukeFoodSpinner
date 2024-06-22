@@ -205,20 +205,14 @@ function displayResult(selectedIndex) {
     // Reset all items to default style
     items.forEach(item => item.classList.remove('active'));
 
-         // Play the audio
-         const munchAudio = document.getElementById('munchAudio');
-         munchAudio.play();
-         munchAudio.volume = 1.0;
-         munchAudio.playbackRate = 1.75;
-
-    // Highlight the selected item
-    items[selectedIndex].classList.add('active');
-
-     // Play the audio
+    // Play the audio
     const munchAudio = document.getElementById('munchAudio');
     munchAudio.play();
     munchAudio.volume = 1.0;
-    munchAudio.playbackRate = 4.5;
+    munchAudio.playbackRate = 1.75;
+
+    // Highlight the selected item
+    items[selectedIndex].classList.add('active');
 
     // Enable button after displaying result
     buttons.forEach(button => {
