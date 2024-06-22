@@ -68,7 +68,7 @@ btn1.addEventListener('click', function() {
     item4.style.backgroundImage = 'url("https://hips.hearstapps.com/hmg-prod/images/chicken-stir-fry-index-65130392700bf.jpg?crop=0.502xw:1.00xh;0.170xw,0&resize=1200:*")';
     item5.style.backgroundImage = 'url("https://images.ctfassets.net/3vz37y2qhojh/1iLDJFZEjg02OFuHZOP2Ga/c779f1850ef60dfd55f4b35c271923cf/Healthy-Southern-style-Cast-Iron-Chicken-Dinner-1.35-1.jpg?w=750&fit=fill&fm=webp")';
     item6.style.backgroundImage = 'url("https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/06/08/0/FNM_070120-Grilled-Hot-Dogs_s4x3.jpg.rend.hgtvcom.616.462.suffix/1591625198177.jpeg")';
-    item7.style.backgroundImage = 'url("https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_150,q_auto:low,fl_lossy,dpr_2.0,c_fill,f_auto,h_130/iljrk5am4jk7mcd0rwtr")';
+    item7.style.backgroundImage = 'url("https://ladleandleaf.com/images/600_L_L_Our-Story_WebBlock.jpg")';
     item8.style.backgroundImage = 'url("https://sweetieshoppie.co.uk/cdn/shop/files/flying-saucers-or-sherbet-discs-or-kids-party-sweets-or-the-sweetie-shoppie-1_512x512.jpg?v=1718557704")';
 
     for (let i = 0; i < marketplace.length; i++) {
@@ -205,8 +205,20 @@ function displayResult(selectedIndex) {
     // Reset all items to default style
     items.forEach(item => item.classList.remove('active'));
 
+         // Play the audio
+         const munchAudio = document.getElementById('munchAudio');
+         munchAudio.play();
+         munchAudio.volume = 1.0;
+         munchAudio.playbackRate = 1.75;
+
     // Highlight the selected item
     items[selectedIndex].classList.add('active');
+
+     // Play the audio
+    const munchAudio = document.getElementById('munchAudio');
+    munchAudio.play();
+    munchAudio.volume = 1.0;
+    munchAudio.playbackRate = 4.5;
 
     // Enable button after displaying result
     buttons.forEach(button => {
