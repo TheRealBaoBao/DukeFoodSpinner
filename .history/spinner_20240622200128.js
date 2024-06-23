@@ -261,7 +261,7 @@ const rizzAudio = document.getElementById('rizzAudio');
 rizzAudio.playbackRate = 2.0;
 rizzAudio.volume = 1.0;
 
-document.getElementById('btn').addEventListener('click', function() {
+document.getElementById('btnSpin').addEventListener('click', function() {
     console.log('Button clicked'); // Check if button click event is detected
     console.log(rizzAudio); // Check if rizzAudio element is correctly retrieved
     rizzAudio.currentTime = 0;
