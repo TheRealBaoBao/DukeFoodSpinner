@@ -228,35 +228,6 @@ function displayResult(selectedIndex) {
     spinComplete = true;
 }
 
-const osuAudio = document.getElementById('osuAudio');
-osuAudio.playbackRate = 3.0;
-// Variable to track whether sound can be played
-let canPlaySound = true;
-
-// Function to reset sound cooldown after a delay
-function resetSoundCooldown() {
-    console.log('Cooldown ended');
-    canPlaySound = true;
-}
-
-// Add event listener to play flip sound when card is flipped
-document.querySelectorAll('.flip-card-inner').forEach(card => {
-    card.addEventListener('mouseenter', function () {
-        console.log('Mouse entered');
-        if (canPlaySound) {
-            osuAudio.currentTime = 0; // Rewind sound to start
-            osuAudio.play(); // Play flip sound
-            canPlaySound = false; // Prevent further plays until cooldown ends
-
-            // Set a cooldown period (e.g., 1 second)
-            setTimeout(resetSoundCooldown, 275); // Adjust the delay as needed (in milliseconds)
-        } else {
-            console.log('Sound on cooldown');
-        }
-    });
-});
-
-
 const rizzAudio = document.getElementById('rizzAudio');
 rizzAudio.playbackRate = 2.0;
 rizzAudio.volume = 1.0;

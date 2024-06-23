@@ -249,7 +249,7 @@ document.querySelectorAll('.flip-card-inner').forEach(card => {
             canPlaySound = false; // Prevent further plays until cooldown ends
 
             // Set a cooldown period (e.g., 1 second)
-            setTimeout(resetSoundCooldown, 275); // Adjust the delay as needed (in milliseconds)
+            setTimeout(resetSoundCooldown, 2); // Adjust the delay as needed (in milliseconds)
         } else {
             console.log('Sound on cooldown');
         }
