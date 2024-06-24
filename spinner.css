@@ -1,7 +1,8 @@
 @font-face {
-    font-family: myFont;
-    src: url(/DukeFoodSpinner/font/Virgil.woff2);
+    font-family: 'myFont';
+    src: url('../font/Virgil.woff2') format('woff2');
 }
+
 
 body {
     --dot-bg: #f2f6fb;
