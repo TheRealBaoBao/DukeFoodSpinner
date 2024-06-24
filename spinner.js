@@ -2,36 +2,36 @@
 
 //mock location
 const marketplace = [
-    { restaruant: 'Wood-Fired', location: '1st floor', priceRange: '$', cuisine: 'Italian' },
-    { restaruant: 'Cucina', location: '2nd floor', priceRange: '$$', cuisine: 'Italian' },
-    { restaruant: 'Harvest', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: 'Fusion', location: '3rd floor', priceRange: '$$$', cuisine: 'Fusion' },
-    { restaruant: 'Durham Market', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: '1892 Grille', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: 'Leaf & Ladle', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: "Baker's Table", location: '3rd floor', priceRange: '$$$', cuisine: 'Bakery' },
+    { restaurant: 'Wood-Fired', location: '1st floor', priceRange: '$', cuisine: 'Italian', dish: 'Margherita Pizza' },
+    { restaurant: 'Cucina', location: '2nd floor', priceRange: '$$', cuisine: 'Italian', dish: 'Pasta Carbonara' },
+    { restaurant: 'Harvest', location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'BBQ Pulled Pork Sandwich' },
+    { restaurant: 'Fusion', location: '3rd floor', priceRange: '$$', cuisine: 'Fusion', dish: 'Sushi Burrito' },
+    { restaurant: 'Durham Market', location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Chicken and Waffles' },
+    { restaurant: '1892 Grille', location: '3rd floor', priceRange: '$$$', cuisine: 'American', dish: 'Ribeye Steak' },
+    { restaurant: 'Leaf & Ladle', location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Tomato Basil Soup' },
+    { restaurant: "Baker's Table", location: '3rd floor', priceRange: '$', cuisine: 'Bakery', dish: 'Croissants and Pastries' },
 ];
 
 const westCampus = [
-    { restaruant: 'Ginger + Soy', location: '1st floor', priceRange: '$', cuisine: 'Japanese' },
-    { restaruant: 'Gyotaku', location: '2nd floor', priceRange: '$$', cuisine: 'Japanese' },
-    { restaruant: 'II Forno', location: '3rd floor', priceRange: '$$$', cuisine: 'Italian' },
-    { restaruant: "JB's Roasts & Chops", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: 'Tandoor', location: '3rd floor', priceRange: '$$$', cuisine: 'Indian' },
-    { restaruant: "The Chef's Kitchen", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: 'Yalla!', location: '3rd floor', priceRange: '$$$', cuisine: 'Middle Eastern' },
-    { restaruant: "Farmstead", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
+    { restaurant: 'Ginger + Soy', location: '1st floor', priceRange: '$$', cuisine: 'Japanese', dish: 'Ramen Bowl' },
+    { restaurant: 'Gyotaku', location: '2nd floor', priceRange: '$$$', cuisine: 'Japanese', dish: 'Sushi Platter' },
+    { restaurant: 'II Forno', location: '3rd floor', priceRange: '$$', cuisine: 'Italian', dish: 'Wood-Fired Pizza with Prosciutto' },
+    { restaurant: "JB's Roasts & Chops", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Prime Rib' },
+    { restaurant: 'Tandoor', location: '3rd floor', priceRange: '$$', cuisine: 'Indian', dish: 'Chicken Tikka Masala' },
+    { restaurant: "The Chef's Kitchen", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Chef\'s Special Burger' },
+    { restaurant: 'Yalla!', location: '3rd floor', priceRange: '$', cuisine: 'Middle Eastern', dish: 'Falafel Wrap' },
+    { restaurant: "Farmstead", location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Farm Fresh Salad' },
 ];
 
 const ninth = [
-    { restaruant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese' },
-    { restaruant: 'Juju', location: '2nd floor', priceRange: '$$', cuisine: 'Asian Fusion' },
-    { restaruant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse' },
-    { restaruant: 'Jimmy Johns', location: '3rd floor', priceRange: '$$$', cuisine: 'Sandwiches' },
-    { restaruant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$$', cuisine: 'American' },
-    { restaruant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$$', cuisine: 'Vietnamese' },
-    { restaruant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French' },
+    { restaurant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese', dish: 'Yuan Yang Hotpot' },
+    { restaurant: 'Juju', location: '2nd floor', priceRange: '$$$', cuisine: 'Asian Fusion', dish: 'Korean BBQ Tacos' },
+    { restaurant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Buffalo Wings' },
+    { restaurant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse', dish: 'Ribeye Steak' },
+    { restaurant: 'Jimmy Johns', location: '3rd floor', priceRange: '$', cuisine: 'Sandwiches', dish: 'Gourmet Subs' },
+    { restaurant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Rotisserie Chicken' },
+    { restaurant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$', cuisine: 'Vietnamese', dish: 'Pho Noodle Soup' },
+    { restaurant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French', dish: 'Coq au Vin' },
 ];
 
 //displaying for modal
@@ -72,7 +72,7 @@ btn1.addEventListener('click', function () {
     item8.style.backgroundImage = 'url("https://sweetieshoppie.co.uk/cdn/shop/files/flying-saucers-or-sherbet-discs-or-kids-party-sweets-or-the-sweetie-shoppie-1_512x512.jpg?v=1718557704")';
 
     for (let i = 0; i < marketplace.length; i++) {
-        const restaurantName = marketplace[i].restaruant;
+        const restaurantName = marketplace[i].restaurant;
         const priceRange = marketplace[i].priceRange;
         const cuisineType = marketplace[i].cuisine;
         document.querySelector(`.item-${i + 1} .restaurantName`).innerHTML = restaurantName;
@@ -99,7 +99,7 @@ btn2.addEventListener('click', function () {
     item8.style.backgroundImage = 'url("https://fesmag.com/images/stories/2022-07/onsite_IMG_2511-duke-induction.jpg")';
 
     for (let i = 0; i < westCampus.length; i++) {
-        const restaurantName = westCampus[i].restaruant;
+        const restaurantName = westCampus[i].restaurant;
         const priceRange = westCampus[i].priceRange;
         const cuisineType = westCampus[i].cuisine;
         document.querySelector(`.item-${i + 1} .restaurantName`).innerHTML = restaurantName;
@@ -126,7 +126,7 @@ btn3.addEventListener('click', function () {
     item8.style.backgroundImage = 'url("https://d2sygdwsqncsjz.cloudfront.net/613195-4.jpeg")';
 
     for (let i = 0; i < ninth.length; i++) {
-        const restaurantName = ninth[i].restaruant;
+        const restaurantName = ninth[i].restaurant;
         const priceRange = ninth[i].priceRange;
         const cuisineType = ninth[i].cuisine;
         document.querySelector(`.item-${i + 1} .restaurantName`).innerHTML = restaurantName;
@@ -190,9 +190,10 @@ function animateSelection(selectedIndex) {
 
             modal.style.display = "block"; // When the user clicks on the button, open the modal
 
-            document.getElementById('pText1').innerHTML = randomRestaraunt.restaruant;
-            document.getElementById('pText2').innerHTML = "Location: " + randomRestaraunt.location;
-            document.getElementById('pText3').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
+            document.getElementById('pText1').innerHTML = randomRestaraunt.restaurant;
+            document.getElementById('pText2').innerHTML = "Cuisine Type: " + randomRestaraunt.cuisine;
+            document.getElementById('pText3').innerHTML = "Our Favs: " + randomRestaraunt.dish;
+            document.getElementById('pText4').innerHTML = "Price Range: " + randomRestaraunt.priceRange;
 
             span.onclick = function () {
                 modal.style.display = "none";
@@ -213,6 +214,7 @@ function displayResult(selectedIndex) {
 
     // Play the audio
     const munchAudio = document.getElementById('munchAudio');
+    munchAudio.currentTime = 0.8;
     munchAudio.play();
     munchAudio.volume = 1.0;
     munchAudio.playbackRate = 1.75;
@@ -264,7 +266,7 @@ rizzAudio.volume = 1.0;
 document.getElementById('btn').addEventListener('click', function() {
     console.log('Button clicked'); // Check if button click event is detected
     console.log(rizzAudio); // Check if rizzAudio element is correctly retrieved
-    rizzAudio.currentTime = 0;
+    rizzAudio.currentTime = 0.8;
     rizzAudio.play();
 });
 

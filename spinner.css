@@ -195,6 +195,7 @@ h1 {
     animation: flash 0.5s ease-out;
 }
 
+
 @keyframes flash {
     0% {
         opacity: 1;
@@ -218,6 +219,34 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
+}
+
+
+#btnMenu,
+#btnLocation,
+#btnBuddy {
+    font-family: myFont;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    margin-left: 15px;
+    padding: 10px 20px;
+    background-color: #fff07f;
+}
+
+#btnMenu:hover {
+    background: linear-gradient(120deg, #ff9e57, #ffcf40);
+}
+
+#btnLocation:hover {
+    background: linear-gradient(100deg, #ff9e57, #ffcf40);
+}
+
+#btnBuddy:hover {
+    background: linear-gradient(75deg, #ff9e57, #ffcf40);
 }
 
 .locationBtn {
@@ -272,7 +301,13 @@ h1 {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-image: url("https://media.discordapp.net/attachments/879252425888923729/1254615393834897489/IMG_9359.jpg?ex=667a2323&is=6678d1a3&hm=557b56f66a6a2433a0fc7075a5d3fc1d8d62e430e6f6b5260f1af6b12b9678ab&=&format=webp&width=1100&height=644");
+    background-size: cover;
+    /* Cover makes sure the image covers the entire background */
+    background-position: bottom;
+    /* Center the image within the div */
+    background-repeat: no-repeat;
+    /* Prevent the image from repeating */
     margin: 15% auto;
     /* 10% from the top and centered */
     padding: 20px;
@@ -318,7 +353,8 @@ h1 {
     /* Inherit Yale Blue color for links */
 }
 
-.cuisine, .priceRange {
+.cuisine,
+.priceRange {
     margin: 5px 0;
     font-size: 15px
 }
