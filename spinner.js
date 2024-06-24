@@ -116,7 +116,7 @@ btn3.addEventListener('click', function () {
     // Add 'clicked' class to the clicked button
     btn3.classList.add('clicked');
     // Update background image of items container
-    item1.style.backgroundImage = 'url("https://lh3.googleusercontent.com/p/AF1QipNEbVs638mvnJpKw_fjgjEbXVtiJ0wnm_XaX9o6=s1600-w240-h240")';
+    item1.style.backgroundImage = 'url("https://www.tastingtable.com/img/gallery/14-facts-you-need-to-know-about-hot-pot/l-intro-1681931538.jpg")';
     item2.style.backgroundImage = 'url("https://s3-media0.fl.yelpcdn.com/bphoto/qJ4DCEipJeAq5yIbnSeDZA/348s.jpg")';
     item3.style.backgroundImage = 'url("https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=600,format=auto,quality=50/https://doordash-static.s3.amazonaws.com/media/photos/b4879a30-f87c-45c8-b4c1-4395444cae0d-retina-large.jpg")';
     item4.style.backgroundImage = 'url("https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/08/06/sliced-steak-on-cutting-board.jpg.rend.hgtvcom.1280.720.suffix/1628249872290.jpeg")';
