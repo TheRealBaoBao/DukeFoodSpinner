@@ -13,7 +13,7 @@ const marketplace = [
 ];
 
 const westCampus = [
-    { restaurant: 'Ginger + Soy', location: '1st floor', priceRange: '$$', cuisine: 'Japanese', dish: 'Ramen Bowl' },
+    { restaurant: 'Ginger + Soy', location: '1st floor', priceRange: '$$', cuisine: 'Japanese', dish: 'Ramen Bowl', yelpMenuUrl: "https://www.yelp.com/biz/szechuan-mansion-hotpot-durham"  },
     { restaurant: 'Gyotaku', location: '2nd floor', priceRange: '$$$', cuisine: 'Japanese', dish: 'Sushi Platter' },
     { restaurant: 'II Forno', location: '3rd floor', priceRange: '$$', cuisine: 'Italian', dish: 'Wood-Fired Pizza with Prosciutto' },
     { restaurant: "JB's Roasts & Chops", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Prime Rib' },
@@ -24,14 +24,14 @@ const westCampus = [
 ];
 
 const ninth = [
-    { restaurant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese', dish: 'Yuan Yang Hotpot' },
-    { restaurant: 'Juju', location: '2nd floor', priceRange: '$$$', cuisine: 'Asian Fusion', dish: 'Korean BBQ Tacos' },
-    { restaurant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Buffalo Wings' },
-    { restaurant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse', dish: 'Ribeye Steak' },
-    { restaurant: 'Jimmy Johns', location: '3rd floor', priceRange: '$', cuisine: 'Sandwiches', dish: 'Gourmet Subs' },
-    { restaurant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Rotisserie Chicken' },
-    { restaurant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$', cuisine: 'Vietnamese', dish: 'Pho Noodle Soup' },
-    { restaurant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French', dish: 'Coq au Vin' },
+    { restaurant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese', dish: 'Yuan Yang Hotpot', yelpMenuUrl: "https://www.yelp.com/biz/szechuan-mansion-hotpot-durham" },
+    { restaurant: 'Juju', location: '2nd floor', priceRange: '$$$', cuisine: 'Asian Fusion', dish: 'Korean BBQ Tacos', yelpMenuUrl: "https://www.yelp.com/menu/juju-asian-tapas-bar-durham-3" },
+    { restaurant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Buffalo Wings', yelpMenuUrl: "https://www.yelp.com/menu/heavenly-buffaloes-durham" },
+    { restaurant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse', dish: 'Ribeye Steak', yelpMenuUrl: "https://www.yelp.com/menu/metro-8-steakhouse-durham" },
+    { restaurant: 'Jimmy Johns', location: '3rd floor', priceRange: '$', cuisine: 'Sandwiches', dish: 'Gourmet Subs', yelpMenuUrl: "https://www.jimmyjohns.com/?utm_source=yelp&utm_medium=affiliate&utm_term=yelp_users&utm_content=url&utm_campaign=always_on" },
+    { restaurant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Rotisserie Chicken', yelpMenuUrl: "https://www.alpacachicken.com/menu" },
+    { restaurant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$', cuisine: 'Vietnamese', dish: 'Pho Noodle Soup', yelpMenuUrl: "https://www.yelp.com/biz/banhs-cuisine-durham-2" },
+    { restaurant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French', dish: 'Coq au Vin', yelpMenuUrl: "https://www.yelp.com/menu/vin-rouge-durham" },
 ];
 
 //displaying for modal
@@ -214,7 +214,7 @@ function displayResult(selectedIndex) {
 
     // Play the audio
     const munchAudio = document.getElementById('munchAudio');
-    munchAudio.currentTime = 0.8;
+    munchAudio.currentTime = 0.9;
     munchAudio.play();
     munchAudio.volume = 1.0;
     munchAudio.playbackRate = 1.75;
@@ -270,3 +270,19 @@ document.getElementById('btn').addEventListener('click', function() {
     rizzAudio.play();
 });
 
+function openMenu() {
+    let restaurant;
+    if (btn1.classList.contains('clicked')) {
+        restaurant = marketplace.find(item => item.restaurant === document.getElementById('pText1').innerHTML);
+    } else if (btn2.classList.contains('clicked')) {
+        restaurant = westCampus.find(item => item.restaurant === document.getElementById('pText1').innerHTML);
+    } else if (btn3.classList.contains('clicked')) {
+        restaurant = ninth.find(item => item.restaurant === document.getElementById('pText1').innerHTML);
+    }
+
+    if (restaurant && restaurant.yelpMenuUrl) {
+        window.open(restaurant.yelpMenuUrl, '_blank');
+    } else {
+        alert('Menu not available.');
+    }
+}
