@@ -1,0 +1,186 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duke Munches Spinner</title>
+    <link rel="stylesheet" href="spinner.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1 class="centered-header">Duke Munchies</h1>
+    <h4 class="centered-header">designed for indecisive munchies, by indecisive munchies :)</h4>
+
+        <!-- Instagram Link -->
+        <p class="centered-header instagram"><a href="https://www.instagram.com/dukemunchies/"
+                target="_blank">@dukemunchies😈</a></p>
+
+        <button id="btn1" class="locationBtn clicked">Marketplace</button>
+        <button id="btn2" class="locationBtn">West Campus</button>
+        <button id="btn3" class="locationBtn">9th Street</button>
+        <div class="items-container">
+
+            <div class="item item-1">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Wood-Fired</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: Italian</p>
+                            <p class="priceRange">Price Range: $</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item item-2">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Cucina</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: Italian</p>
+                            <p class="priceRange">Price Range: $$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="item item-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Harvest</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: American</p>
+                            <p class="priceRange">Price Range: $$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Fusion</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: Fusion</p>
+                            <p class="priceRange">Price Range: $$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-5">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Durham Market</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: American</p>
+                            <p class="priceRange">Price Range: $$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-6">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">1892 Grille</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: American</p>
+                            <p class="priceRange">Price Range: $$$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-7">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Leaf & Ladle</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: American</p>
+                            <p class="priceRange">Price Range: $</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item item-8">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="restaurantName">Baker's Table</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="cuisine">Cuisine Type: Bakery</p>
+                            <p class="priceRange">Price Range: $</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button id="btn" onclick="pickRestaurant()">Spin</button>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Your restaurant is...</h2>
+                <h3 id="pText1">a</h3>
+                <p id="pText2">b</p>
+                <p id="pText3">a</p>
+                <p id="pText4">a</p>
+                <button id="btnMenu" onclick="">Menu</button>
+                <button id="btnLocation" onclick="">Location</button>
+                <button id="btnBuddy" onclick="">Find A Buddy</button>
+            </div>
+
+<!-- Original audio for munch sound -->
+<audio id="munchAudio">
+<source src="audio/munch.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<!-- New audio for click sound -->
+<audio id="clickAudio">
+<source src="audio/click.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<!-- New audio for osu sound -->
+<audio id="osuAudio">
+<source src="audio/osu.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<!-- New audio for rizz sound -->
+<audio id="rizzAudio">
+<source src="audio/rizz.mp3" preload="auto" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+        </div>
+
+        <script src="spinner.js"></script>
+
+</body>
+
+</html>
