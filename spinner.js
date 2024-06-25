@@ -13,7 +13,7 @@ const marketplace = [
 ];
 
 const westCampus = [
-    { restaurant: 'Ginger + Soy', location: '1st floor', priceRange: '$$', cuisine: 'Japanese', dish: 'Ramen Bowl', yelpMenuUrl: "https://www.yelp.com/biz/szechuan-mansion-hotpot-durham"  },
+    { restaurant: 'Ginger + Soy', location: '1st floor', priceRange: '$$', cuisine: 'Japanese', dish: 'Ramen Bowl', yelpMenuUrl: "https://www.yelp.com/biz/szechuan-mansion-hotpot-durham" },
     { restaurant: 'Gyotaku', location: '2nd floor', priceRange: '$$$', cuisine: 'Japanese', dish: 'Sushi Platter' },
     { restaurant: 'II Forno', location: '3rd floor', priceRange: '$$', cuisine: 'Italian', dish: 'Wood-Fired Pizza with Prosciutto' },
     { restaurant: "JB's Roasts & Chops", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Prime Rib' },
@@ -24,14 +24,14 @@ const westCampus = [
 ];
 
 const ninth = [
-    { restaurant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese', dish: 'Yuan Yang Hotpot', yelpMenuUrl: "https://www.yelp.com/biz/szechuan-mansion-hotpot-durham" },
-    { restaurant: 'Juju', location: '2nd floor', priceRange: '$$$', cuisine: 'Asian Fusion', dish: 'Korean BBQ Tacos', yelpMenuUrl: "https://www.yelp.com/menu/juju-asian-tapas-bar-durham-3" },
-    { restaurant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Buffalo Wings', yelpMenuUrl: "https://www.yelp.com/menu/heavenly-buffaloes-durham" },
-    { restaurant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse', dish: 'Ribeye Steak', yelpMenuUrl: "https://www.yelp.com/menu/metro-8-steakhouse-durham" },
-    { restaurant: 'Jimmy Johns', location: '3rd floor', priceRange: '$', cuisine: 'Sandwiches', dish: 'Gourmet Subs', yelpMenuUrl: "https://www.jimmyjohns.com/?utm_source=yelp&utm_medium=affiliate&utm_term=yelp_users&utm_content=url&utm_campaign=always_on" },
-    { restaurant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Rotisserie Chicken', yelpMenuUrl: "https://www.alpacachicken.com/menu" },
-    { restaurant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$', cuisine: 'Vietnamese', dish: 'Pho Noodle Soup', yelpMenuUrl: "https://www.yelp.com/biz/banhs-cuisine-durham-2" },
-    { restaurant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French', dish: 'Coq au Vin', yelpMenuUrl: "https://www.yelp.com/menu/vin-rouge-durham" },
+    { restaurant: 'Szechuan Mansion Hotpot', location: '1st floor', priceRange: '$', cuisine: 'Chinese', dish: 'Yuan Yang Hotpot', yelpMenuUrl: "https://www.yelp.com/biz/szechuan-mansion-hotpot-durham", address: '746 9th St, Durham, NC 27705' },
+    { restaurant: 'Juju', location: '2nd floor', priceRange: '$$$', cuisine: 'Asian Fusion', dish: 'Korean BBQ Tacos', yelpMenuUrl: "https://www.yelp.com/menu/juju-asian-tapas-bar-durham-3", address: '737 9th St #210, Durham, NC 27705'  },
+    { restaurant: 'Heavenly Buffaloes', location: '3rd floor', priceRange: '$', cuisine: 'American', dish: 'Buffalo Wings', yelpMenuUrl: "https://www.yelp.com/menu/heavenly-buffaloes-durham", address: '1807 W Markham Ave, Durham, NC 27705' },
+    { restaurant: "Metro 8 Steakhouse", location: '3rd floor', priceRange: '$$$', cuisine: 'Steakhouse', dish: 'Ribeye Steak', yelpMenuUrl: "https://www.yelp.com/menu/metro-8-steakhouse-durham", address: '1116 Broad St, Durham, NC 27705' },
+    { restaurant: 'Jimmy Johns', location: '3rd floor', priceRange: '$', cuisine: 'Sandwiches', dish: 'Gourmet Subs', yelpMenuUrl: "https://www.jimmyjohns.com/?utm_source=yelp&utm_medium=affiliate&utm_term=yelp_users&utm_content=url&utm_campaign=always_on", address: '701 9th St, Durham, NC 27705' },
+    { restaurant: "Alpaca Chicken", location: '3rd floor', priceRange: '$$', cuisine: 'American', dish: 'Rotisserie Chicken', yelpMenuUrl: "https://www.alpacachicken.com/menu", address: '703A 9th St, Durham, NC 27705' },
+    { restaurant: "Banh's Cuisine", location: '3rd floor', priceRange: '$$', cuisine: 'Vietnamese', dish: 'Pho Noodle Soup', yelpMenuUrl: "https://www.yelp.com/biz/banhs-cuisine-durham-2", address: '750 9th St, Durham, NC 27705' },
+    { restaurant: "Vin Rouge", location: '3rd floor', priceRange: '$$$', cuisine: 'French', dish: 'Coq au Vin', yelpMenuUrl: "https://www.yelp.com/menu/vin-rouge-durham", address: '2010 Hillsborough Rd, Durham, NC 27705' },
 ];
 
 //displaying for modal
@@ -263,7 +263,7 @@ const rizzAudio = document.getElementById('rizzAudio');
 rizzAudio.playbackRate = 2.0;
 rizzAudio.volume = 1.0;
 
-document.getElementById('btn').addEventListener('click', function() {
+document.getElementById('btn').addEventListener('click', function () {
     console.log('Button clicked'); // Check if button click event is detected
     console.log(rizzAudio); // Check if rizzAudio element is correctly retrieved
     rizzAudio.currentTime = 0.8;
@@ -285,4 +285,33 @@ function openMenu() {
     } else {
         alert('Menu not available.');
     }
+}
+
+function openMap() {
+    window.open('/DukeFoodSpinner/map.html', '_blank');
+}
+
+function initMap() {
+    let map, directionsService, directionsRenderer, addressM;
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 36.0055, lng: -78.9148 },
+        zoom: 13
+    })
+    directionsService = new google.maps.DirectionsService();
+    directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
+
+    let request = {
+        origin: '712 Broad St, Durham, NC 27705',
+        destination: '810 9th St, Durham, NC 27705',
+        //needa fix this part for destination
+        travelMode: 'WALKING'
+    }
+
+    directionsService.route(request, function(result, yipe){
+        if(yipe == "OK"){
+        directionsRenderer.setDirections(result);
+    }
+})
+
 }

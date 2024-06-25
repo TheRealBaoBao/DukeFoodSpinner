@@ -7,9 +7,9 @@
 
 <body>
 
-<div class="container">
-    <h1 class="centered-header">Duke Munchies</h1>
-    <h4 class="centered-header">designed for indecisive munchies, by indecisive munchies :)</h4>
+    <div class="container">
+        <h1 class="centered-header">Duke Munchies</h1>
+        <h4 class="centered-header">designed for indecisive munchies, by indecisive munchies :)</h4>
 
         <!-- Instagram Link -->
         <p class="centered-header instagram"><a href="https://www.instagram.com/dukemunchies/"
@@ -149,33 +149,35 @@
                 <p id="pText3">a</p>
                 <p id="pText4">a</p>
                 <button id="btnMenu" onclick="openMenu()">Menu</button>
-                <button id="btnLocation" onclick="">Get Directions</button>
-                <button id="btnBuddy" onclick="">Find A Buddy</button>
+                <button id="btnLocation" onclick="openMap()">Get Directions
+                </button>
+                </form>
+                <button id="btnBuddy" onclick="window.open('https://tinder.com/', '_blank');">Find A Buddy</button>
             </div>
 
-        <!-- Original audio for munch sound -->
-        <audio id="munchAudio">
-            <source src="audio/munch.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+            <!-- Original audio for munch sound -->
+            <audio id="munchAudio">
+                <source src="audio/munch.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
-        <!-- New audio for click sound -->
-        <audio id="clickAudio">
-            <source src="audio/click.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+            <!-- New audio for click sound -->
+            <audio id="clickAudio">
+                <source src="audio/click.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
-        <!-- New audio for osu sound -->
-        <audio id="osuAudio">
-            <source src="audio/osu.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+            <!-- New audio for osu sound -->
+            <audio id="osuAudio">
+                <source src="audio/osu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
-        <!-- New audio for rizz sound -->
-        <audio id="rizzAudio">
-            <source src="audio/rizz.mp3" preload="auto" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+            <!-- New audio for rizz sound -->
+            <audio id="rizzAudio">
+                <source src="audio/rizz.mp3" preload="auto" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
         </div>
 
