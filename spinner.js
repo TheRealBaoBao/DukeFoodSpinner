@@ -69,7 +69,7 @@ btn1.addEventListener('click', function () {
     item5.style.backgroundImage = 'url("https://images.ctfassets.net/3vz37y2qhojh/1iLDJFZEjg02OFuHZOP2Ga/c779f1850ef60dfd55f4b35c271923cf/Healthy-Southern-style-Cast-Iron-Chicken-Dinner-1.35-1.jpg?w=750&fit=fill&fm=webp")';
     item6.style.backgroundImage = 'url("https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/06/08/0/FNM_070120-Grilled-Hot-Dogs_s4x3.jpg.rend.hgtvcom.616.462.suffix/1591625198177.jpeg")';
     item7.style.backgroundImage = 'url("https://ladleandleaf.com/images/600_L_L_Our-Story_WebBlock.jpg")';
-    item8.style.backgroundImage = 'url("https://sweetieshoppie.co.uk/cdn/shop/files/flying-saucers-or-sherbet-discs-or-kids-party-sweets-or-the-sweetie-shoppie-1_512x512.jpg?v=1718557704")';
+    item8.style.backgroundImage = 'url("https://www.dukesseafood.com/wp-content/uploads/2016/12/dessert.jpg")';
 
     for (let i = 0; i < marketplace.length; i++) {
         const restaurantName = marketplace[i].restaurant;
